@@ -17,8 +17,9 @@ public class RouletteController : MonoBehaviour
     void Update()
     {
         // R키를 눌렀을 때, 룰렛이 멈춘 상태에서만 초기화
-        if (Input.GetKeyDown(KeyCode.R) && rotateSpeed == 0f && !isRotate)
+        if (Input.GetKeyDown(KeyCode.R) && rotateSpeed.Equals(0) && !isRotate)
         {
+            Debug.Log("R키가 입력되어 초기화 됩니다.");
             ResetRoulette(); // 초기화 메서드 호출
         }
 
@@ -54,8 +55,9 @@ public class RouletteController : MonoBehaviour
     }
 
     // 룰렛 초기화 메서드
-    void ResetRoulette()
+    private void ResetRoulette()// 이 스크립트에 붙어있는 룰렛 이미지의 좌표값이 0,0,0이 되어야한다. 
     {
+        transform.rotation = new Quaternion(0f, 0f, 0f, 0);
         rotateSpeed = 0f;   // 회전 속도 초기화
         isOnePlay = false;  // 클릭 가능 상태로 복구
         isRotate = false;   // 회전 상태 초기화
