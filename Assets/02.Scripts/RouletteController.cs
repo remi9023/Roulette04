@@ -65,3 +65,4 @@ public class RouletteController : MonoBehaviour
         Debug.Log("룰렛이 초기화되었습니다.");
     }
 }
+// 숙제 : 유니티에서 회전할 때 사용되는 방식에 대해서 조사해오기 그 중에서 짐벌락에 대해서 디테일하게 알아오기
